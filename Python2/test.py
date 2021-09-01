@@ -1,3 +1,5 @@
-list = [1.0, 2.0, 3.0]
-mt=tuple(list)
-print(mt)
+list_str='fjgdl'
+i=-1
+rev=''
+
+       

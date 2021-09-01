@@ -17,13 +17,12 @@ def range(list_num):
       step = list_num[2]
       temp=[]
       while i < list_num[1]:
-          temp.append(float(i))
+          temp.append(round(float(i),3))
           i=i+step
       
     
     numtuple = tuple(temp)
     return numtuple
-
 
 print('*** New Range ***')
 list = [float(e) for e in input("Enter Input : ").split()]
