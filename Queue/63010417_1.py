@@ -26,12 +26,13 @@ class Queue:
 
 inp = input('Enter Input : ').split(',')
 q = Queue()
-i = 0
 
 for e in inp:
-  cm = e[0]
+  if len(e)>1:
+   cm,value = e.split()
+  else:
+   cm = e
   if cm == 'E':
-   x,value = e.split()
    q.enQueue(value)
    print(q.size())
   elif cm == 'D':
