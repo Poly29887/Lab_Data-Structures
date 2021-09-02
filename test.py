@@ -1,4 +1,5 @@
-e = ['2 4',0]
-a,b = e[0].split(' ')
-print(a)
-print(b)
+e = [2,1,3]
+for em in range(len(e)):
+  e[em]-=1
+
+print(e)
