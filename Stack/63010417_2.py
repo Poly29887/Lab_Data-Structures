@@ -1,69 +1,72 @@
-class Stack:
+class ManangeStack:
     def __init__(self,list = None):
-       self.count=0
        if list == None:
         self.items = []
        else:
         self.items = list
+    def setStack(self,new):
+       self.items = new
     def push(self,i) :
-       self.items.append(int(i))
-       print('Add = {}'.format(i))
+       print(f'Add = {i}')
+       self.items.append(i)
     def pop(self):
-       print('Pop = {}'.format(self.peek()))
-       self.items.pop()
-    def peek(self):
-       return self.items[-1]       
+       if self.isEmpty(): 
+          print(-1)
+       else:
+        print(f'Pop = {self.items[-1]}')
+        self.items.pop()
+    def delete(self,i):
+       if self.isEmpty(): 
+          print(-1)
+       else:
+        while i in self.items:
+          print(f'Delete = {i}')
+          self.items.remove(i)
+    def less_delete(self,i):
+       temp = []
+       if self.isEmpty(): 
+          print(-1)
+       else:
+        for e in self.items:
+          if e < i:
+            temp.append(e)
+        temp.reverse()
+        for em in temp:
+            self.items.remove(em)
+            print(f'Delete = {em} Because {em} is less than {i}')
+    def more_delete(self,i): 
+       temp=[]  
+       if self.isEmpty(): 
+          print(-1)
+       else:
+        for e in self.items:
+          if e > i:
+            temp.append(e)
+        temp.reverse()
+        for em in temp:
+            self.items.remove(em)
+            print(f'Delete = {em} Because {em} is more than {i}')
     def isEmpty(self):
        return self.items == []
     def size(self):
-       return len(self.items)
-    def delete(self,i):
-       temp = []
-       for e in self.items:
-          if e != i:
-            temp.append(e)
-          else:
-           print('Delete = {}'.format(i))
-       self.items = temp
+       return len(self.items) 
+    def __str__(self):
+       return f'Value in Stack = {self.items}'
+           
 
-    def less_del(self,i):
-       temp = []
-       for e in self.items:
-          if e < i:
-            print('Delete = {} Because {} is less than {}'.format(e,e,i))
-          else :
-            temp.append(e)
-       self.items = temp
-    def more_del(self,i):
-       temp = []
-       for e in self.items:
-          if e > i:
-            print('Delete = {} Because {} is more than {}'.format(e,e,i))
-          else :
-            temp.append(e)
-       self.items = temp       
-
-temp = [e for e in input('Enter Input : ').split(',')]
-inp=[]
-for e in temp:
-    inp.append(e.split())
-i=0
-s=Stack()
-while i < len(inp):
-    if  inp[i][0]== 'A':
-        s.push(int(inp[i][1]))
-    elif s.isEmpty() == True :
-        print('-1')
-    elif  inp[i][0]== 'P':
-        s.pop()
-    elif inp[i][0] == 'D':
-        s.delete(int(inp[i][1]))
-    elif  inp[i][0]== 'LD':
-        s.less_del(int(inp[i][1]))
-    elif inp[i][0] == 'MD':
-        s.more_del(int(inp[i][1]))
-    i+=1
-print('Value in Stack =', s.items)
-
-
-
+inp = input('Enter Input : ').split(',')
+s = ManangeStack()
+for e in inp:
+   if e[0] == 'P':
+      s.pop()
+   else:
+      command,value = e.split()
+      if command == 'A':
+         s.push(int(value))
+      elif command == 'D':
+         s.delete(int(value))
+      elif command == 'LD':
+         s.less_delete(int(value))
+      elif command == 'MD':
+         s.more_delete(int(value))     
+print(s)
