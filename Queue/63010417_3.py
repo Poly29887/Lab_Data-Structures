@@ -13,9 +13,9 @@ class Queue:
     def size(self):
       return len(self.items)
     def getValue(self,i):
-      return self.items[0]
+      return self.items[i]
     def __str__(self):
-      return q.items
+      return self.items
 
 def secretCode(code,hint=None,step=None):
   output = ''
