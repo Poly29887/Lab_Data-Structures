@@ -65,5 +65,22 @@ class DoublyLinkedList : #Circular Doubly linked list with dummy
         
     def delete(self,i) :
         self.removeNode(self.nodeAt(i))
-        
-l = DoublyLinkedList
+
+
+l2 = DoublyLinkedList()
+l2.append('a')
+l2.append('b')
+l2.append('c')
+l2.append('d')
+l2.append('e')
+l2.append('z')
+print(l2)
+l2.delete(5)
+print(l2)
+l2.delete(0)
+print(l2)
+l2.append('aa')
+print(l2)
+l2.delete(4)
+print(l2)
+print(l2.size)
