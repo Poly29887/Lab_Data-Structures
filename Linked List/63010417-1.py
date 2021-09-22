@@ -31,7 +31,7 @@ class LinkedList:
               now = now.next
               self.size +=1
           now.next = p
-          self.size += 1 # บวก head, ท้าย 
+          self.size += 1 
         
     def addHead(self, item):
         p = Node(item)
