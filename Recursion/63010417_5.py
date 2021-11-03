@@ -1,7 +1,5 @@
 def rec_row(number, row):
-    print('_'*(number-row), end="")
-    print('#'*row, end="")
-    print('')
+    print('_'*(number-row)+'#'*row)
 
 def rec_pattern(number, row):
     if number > 0:

@@ -14,5 +14,5 @@ inp = int(input('Enter Number : '))
 if inp < 0:
     print('Only Positive & Zero Number ! ! !')
 else:
-    num = 2**inp-1
+    num = (2**inp)-1
     binary(0,num,inp)
