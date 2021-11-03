@@ -1,5 +1,5 @@
 print(' *** Wind classification ***')
-speed=float(input('Enter wind speed (km/h) : '))
+speed = float(input('Enter wind speed (km/h) : '))
 if speed>=0 and speed <=51.99 :
     ans = 'Breeze'
 elif speed>=52.00 and speed <=55.99:
